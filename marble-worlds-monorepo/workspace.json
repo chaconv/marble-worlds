@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "marble-worlds-api": "apps/marble-worlds-api",
+    "marble-worlds-ui": "apps/marble-worlds-ui",
+    "marble-worlds-ui-e2e": "apps/marble-worlds-ui-e2e"
+  }
+}

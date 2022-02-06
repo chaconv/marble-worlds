@@ -1,0 +1,73 @@
+{
+  "root": "apps/marble-worlds-ui",
+  "sourceRoot": "apps/marble-worlds-ui/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/marble-worlds-ui",
+        "index": "apps/marble-worlds-ui/src/index.html",
+        "baseHref": "/",
+        "main": "apps/marble-worlds-ui/src/main.tsx",
+        "polyfills": "apps/marble-worlds-ui/src/polyfills.ts",
+        "tsConfig": "apps/marble-worlds-ui/tsconfig.app.json",
+        "assets": [
+          "apps/marble-worlds-ui/src/favicon.ico",
+          "apps/marble-worlds-ui/src/assets"
+        ],
+        "styles": ["apps/marble-worlds-ui/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/marble-worlds-ui/src/environments/environment.ts",
+              "with": "apps/marble-worlds-ui/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "marble-worlds-ui:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "marble-worlds-ui:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/marble-worlds-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/marble-worlds-ui"],
+      "options": {
+        "jestConfig": "apps/marble-worlds-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

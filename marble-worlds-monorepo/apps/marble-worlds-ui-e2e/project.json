@@ -1,0 +1,28 @@
+{
+  "root": "apps/marble-worlds-ui-e2e",
+  "sourceRoot": "apps/marble-worlds-ui-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/marble-worlds-ui-e2e/cypress.json",
+        "devServerTarget": "marble-worlds-ui:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "marble-worlds-ui:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/marble-worlds-ui-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["marble-worlds-ui"]
+}

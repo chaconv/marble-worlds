@@ -63,7 +63,7 @@ nx g @nrwl/react:lib my-lib
 ```
 
 # Run apps
-```bash	
+```bash
 nx serve client
 ```
 

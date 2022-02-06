@@ -1,0 +1,52 @@
+{
+  "root": "apps/marble-worlds-api",
+  "sourceRoot": "apps/marble-worlds-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/marble-worlds-api",
+        "main": "apps/marble-worlds-api/src/main.ts",
+        "tsConfig": "apps/marble-worlds-api/tsconfig.app.json",
+        "assets": ["apps/marble-worlds-api/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/marble-worlds-api/src/environments/environment.ts",
+              "with": "apps/marble-worlds-api/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "marble-worlds-api:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/marble-worlds-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/marble-worlds-api"],
+      "options": {
+        "jestConfig": "apps/marble-worlds-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

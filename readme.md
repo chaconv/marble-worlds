@@ -17,3 +17,7 @@ Fase 1:
 - Setup Project frameworks
 - Gameplay & initial assets definition
 
+
+### Resources
+
+Monorepo: https://github.com/kevelopment/nx-nestjs-react-starter

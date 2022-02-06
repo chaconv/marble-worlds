@@ -1,0 +1,27 @@
+{
+  "name": "marble-worlds",
+  "version": "0.0.1",
+  "description": "React idle game",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaconv/marble-worlds.git"
+  },
+  "keywords": [
+    "react",
+    "web3.0",
+    "idle"
+  ],
+  "author": "chaconv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaconv/marble-worlds/issues"
+  },
+  "homepage": "https://github.com/chaconv/marble-worlds#readme"
+}
